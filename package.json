@@ -13,7 +13,12 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "classnames": "^2.2.6",
+    "faker": "^4.1.0",
+    "miragejs": "^0.1.35",
+    "react-scripts": "3.4.3",
+    "seedrandom": "^3.0.5"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"
