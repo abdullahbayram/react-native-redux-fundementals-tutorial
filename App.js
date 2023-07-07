@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import Header from './src/features/header/Header'
+import TopBar from "./src/features/topBar/TopBar";
+import FilterModal from "./src/features/filterModal/FilterModal";
 
 // import './src/api'
 
@@ -12,11 +15,21 @@ store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
 // log: '3'
 
 export default function App() {
+    const [filterVisible, setFilterVisible] = useState(true)
+
   return (
-    <View style={styles.container}>
-      <Text>Welcome to the Redux Fundamentals example app!</Text>
+    <SafeAreaView style={styles.container}>
+      <TopBar/>
+      <Header/>
       <StatusBar style="auto" />
-    </View>
+      <FilterModal
+          isVisible={filterVisible}
+          onDonePress={()=>setFilterVisible(false)}
+          onBackDropPress={()=>setFilterVisible(false)}
+      >
+
+      </FilterModal>
+    </SafeAreaView>
   );
 }
 
@@ -25,6 +38,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });
